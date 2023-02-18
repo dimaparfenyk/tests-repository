@@ -19,17 +19,19 @@ const ingredients = [
 
 // renderIngredientListMarkUp(ingredients);
 
-
-
-function renderIngredientListMarkUp(ingredientsArr){
 const ingredientsList=document.querySelector("#ingredients");
 
- ingredientsArr.map(ingredient => {
-const element=document.createElement('li');
-  element.classList.add("item");
-  element.textContent = ingredient;
-  ingredientsList.append(element)
+function renderIngredientListMarkUp(ingredients){
+
+  const items = [];
+
+ ingredients.map(ingredient => {
+const item=document.createElement('li');
+  item.classList.add("item");
+   item.textContent = ingredient;
+   items.push(item);
  });
+  ingredientsList.append(...items);
 };
 
 renderIngredientListMarkUp(ingredients);

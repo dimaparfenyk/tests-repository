@@ -15,18 +15,15 @@ const images = [
 
 const gallery=document.querySelector(".gallery");
 
-
-function renderMarkUp(arr){
-
-const markup=arr
-.map(({url, alt})=>`
+const renderMarkUp = (items=[]) => items
+  .map(({ url, alt }) => `
 <li>
 <img src=${url} alt=${alt} width=320px height=200px/>
-</li`)
-.join("");
+</li`).join("");
 
-gallery.insertAdjacentHTML("beforeend", markup)
-}
+const galleryMarkUpRender = renderMarkUp(images);
 
-renderMarkUp(images)
+gallery.insertAdjacentHTML("beforeend", galleryMarkUpRender)
+// renderMarkUp(images);
+
 
